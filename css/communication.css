@@ -1,0 +1,223 @@
+.communication-tabs {
+
+    display: flex;
+
+    gap: 8px;
+
+    background: white;
+
+    padding: 5px;
+
+    border-radius: 14px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.communication-tab {
+
+    flex: 1;
+
+    border: 0;
+
+    background: transparent;
+
+    padding: 11px;
+
+    border-radius: 10px;
+
+    color: var(--muted);
+
+}
+
+
+.communication-tab.active {
+
+    background: #f0efff;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.chat-panel {
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+}
+
+
+.chat-header {
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 16px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.chat-header small {
+
+    display: block;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+
+}
+
+
+.messages {
+
+    min-height: 400px;
+
+    padding: 20px;
+
+    background: #f8f8fb;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.message {
+
+    max-width: 75%;
+
+    padding: 12px 15px;
+
+    border-radius: 15px;
+
+    line-height: 1.5;
+
+}
+
+
+.message span {
+
+    display: block;
+
+    font-size: 10px;
+
+    opacity: 0.6;
+
+    margin-top: 5px;
+
+}
+
+
+.message.received {
+
+    background: white;
+
+    align-self: flex-start;
+
+}
+
+
+.message.sent {
+
+    background: #e9e6ff;
+
+    align-self: flex-end;
+
+}
+
+
+.message-input {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px;
+
+}
+
+
+.message-input input {
+
+    flex: 1;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 11px 15px;
+
+}
+
+
+.message-input button {
+
+    width: 44px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+.conversation-list {
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+}
+
+
+.conversation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.conversation small {
+
+    display: block;
+
+    color: var(--muted);
+
+    margin-top: 4px;
+
+}
