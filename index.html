@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNIRISE — Connect. Discover. Rise.</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/communication.css">
+    <link rel="stylesheet" href="css/clubs.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-logo">U</div>
+
+            <div>
+                <h1>UNIRISE</h1>
+                <span>Connect. Discover. Rise.</span>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <button id="notificationBtn" class="icon-btn">🔔</button>
+            <button id="aiTopBtn" class="ai-btn">✦ AI</button>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main id="mainContent">
+
+        <!-- FEED -->
+        <section id="feedPage" class="page active">
+
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">CAMPUS DISCOVERY</span>
+                    <h2>What's happening?</h2>
+                </div>
+
+                <button id="createPostBtn" class="primary-btn">
+                    + Post
+                </button>
+            </div>
+
+
+            <!-- CATEGORY CHIPS -->
+
+            <div class="category-row">
+
+                <button class="category-chip active"
+                        data-category="all">
+                    All
+                </button>
+
+                <button class="category-chip"
+                        data-category="event">
+                    Events
+                </button>
+
+                <button class="category-chip"
+                        data-category="hackathon">
+                    Hackathons
+                </button>
+
+                <button class="category-chip"
+                        data-category="internship">
+                    Internships
+                </button>
+
+                <button class="category-chip"
+                        data-category="club">
+                    Clubs
+                </button>
+
+                <button class="category-chip"
+                        data-category="opportunity">
+                    Opportunities
+                </button>
+
+            </div>
+
+
+            <!-- FEED -->
+
+            <div id="feedContainer"></div>
+
+        </section>
+
+
+        <!-- COMMUNICATION -->
+
+        <section id="communicationPage" class="page">
+
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">CAMPUS CONNECT</span>
+                    <h2>Communication</h2>
+                </div>
+            </div>
+
+            <div class="communication-tabs">
+
+                <button class="communication-tab active"
+                        data-chat-type="open">
+                    Open Campus
+                </button>
+
+                <button class="communication-tab"
+                        data-chat-type="groups">
+                    Groups
+                </button>
+
+                <button class="communication-tab"
+                        data-chat-type="personal">
+                    Personal
+                </button>
+
+            </div>
+
+            <div id="communicationContainer"></div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section id="searchPage" class="page">
+
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">DISCOVER</span>
+                    <h2>Search UNIRISE</h2>
+                </div>
+            </div>
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    id="globalSearch"
+                    type="text"
+                    placeholder="Search events, clubs, students..."
+                >
+
+            </div>
+
+            <div id="aiSuggestions"></div>
+
+            <div id="searchResults"></div>
+
+        </section>
+
+
+        <!-- CLUBS -->
+
+        <section id="clubsPage" class="page">
+
+            <div class="page-heading">
+
+                <div>
+                    <span class="eyebrow">CAMPUS COMMUNITY</span>
+                    <h2>Clubs</h2>
+                </div>
+
+                <button id="manageClubBtn"
+                        class="secondary-btn">
+                    Club Dashboard
+                </button>
+
+            </div>
+
+            <div id="clubsContainer"
+                 class="club-grid">
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+
+        <section id="profilePage" class="page">
+
+            <div id="profileContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-nav">
+
+        <button class="nav-item active"
+                data-page="feedPage">
+
+            <span>⌂</span>
+            <small>Feed</small>
+
+        </button>
+
+
+        <button class="nav-item"
+                data-page="communicationPage">
+
+            <span>◌</span>
+            <small>Connect</small>
+
+        </button>
+
+
+        <button class="nav-item"
+                data-page="searchPage">
+
+            <span>⌕</span>
+            <small>Search</small>
+
+        </button>
+
+
+        <button class="nav-item"
+                data-page="clubsPage">
+
+            <span>♧</span>
+            <small>Clubs</small>
+
+        </button>
+
+
+        <button class="nav-item"
+                data-page="profilePage">
+
+            <span>◯</span>
+            <small>Me</small>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- POST MODAL -->
+
+<div id="postModal"
+     class="modal hidden">
+
+    <div class="modal-content">
+
+        <button class="modal-close"
+                id="closePostModal">
+            ×
+        </button>
+
+        <h2>Create Campus Post</h2>
+
+        <select id="postType">
+
+            <option value="event">Event</option>
+            <option value="hackathon">Hackathon</option>
+            <option value="internship">Internship</option>
+            <option value="club">Club Announcement</option>
+            <option value="opportunity">Student Opportunity</option>
+
+        </select>
+
+        <input
+            id="postTitle"
+            placeholder="Title"
+        >
+
+        <textarea
+            id="postDescription"
+            placeholder="Describe your opportunity..."
+        ></textarea>
+
+        <input
+            id="postLink"
+            placeholder="Registration / Application link"
+        >
+
+        <button id="publishPostBtn"
+                class="primary-btn full">
+            Publish Post
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="js/data.js"></script>
+<script src="js/events.js"></script>
+<script src="js/communication.js"></script>
+<script src="js/clubs.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
